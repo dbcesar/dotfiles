@@ -1,0 +1,48 @@
+// aXb4J+xLcdNZCgMf3gfPAUNB4NBcZzs4Uc4YKqzyhzkuXNxGoaIfHNTZCROgfeybumZNCw7v9vCv/cmlct/JPxJYc+yat5uPQr0gKMOxOPIDZrislipQg1MNJj2zKSeViZF4uOW5uFnAqcBSHRxJDGWEKTy/fEWVYZ4pPFW+5SrPXE4R4uIyOVuj4jwB0yrmiMgNGO1UtaS/KvW7mni2tZ6NN6PuGyYJzvwh2sOaWuX98uA+xDTLBsrl7AnB7FeHHpYSQmm+EcNKYogwUHWnxHI1zd4VAjVdgZCtp3bppM1rDqW64t8Li3zWigREXj/Id/1tMDWAPnkKozRkchtzTg==
+{
+	"@encoding": "UTF-8",
+		"@version": "1.0",
+		"preferences": {
+			"config": {
+				"useragent": [{
+					"@value": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2729.0 Safari/537.36",
+					"@id": "32"
+				}, {
+					"@value": "Mozilla/5.0 ($PLATFORM; rv:24.0) Gecko/20100101 Firefox/24.0 $OPR",
+					"@id": "31"
+				}, {
+					"@value": "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)",
+					"@id": "34"
+				}]
+			},
+			"@clean_all": "1",
+			"host": [{
+				"@name": "gyao.yahoo.co.jp",
+				"section": {
+					"@name": "User Agent",
+					"pref": {
+						"@value": "32",
+						"@name": "Spoof UserAgent ID"
+					}
+				}
+			}, {
+				"@name": "hangouts.google.com",
+				"section": {
+					"@name": "User Agent",
+					"pref": {
+						"@value": "32",
+						"@name": "Spoof UserAgent ID"
+					}
+				}
+			}, {
+				"@name": "read.amazon.com",
+				"section": {
+					"@name": "User Agent",
+					"pref": {
+						"@value": "32",
+						"@name": "Spoof UserAgent ID"
+					}
+				}
+			}]
+		}
+}

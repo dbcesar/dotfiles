@@ -1,0 +1,98 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Options for saved report "Monthly Cash Flow - Oct", based on template "f8748b813fab4220ba26e743aedf38da"
+(let ()
+ (define (options-gen)
+  (let ((options (gnc:report-template-new-options/report-guid "f8748b813fab4220ba26e743aedf38da" "Cash Flow")))
+
+; Section: General
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Show Exchange Rates")))
+  ((lambda (option) (if option ((gnc:option-setter option) #t))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Report name")))
+  ((lambda (option) (if option ((gnc:option-setter option) "Monthly Cash Flow"))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "End Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(absolute 1477882800 . 0)))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Start Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(absolute 1475290800 . 0)))) option))
+
+
+; Section: Accounts
+
+  options))
+ (gnc:define-report 
+  'version 1
+  'name "Monthly Cash Flow - Oct"
+  'report-guid "51e92f943ed5bf1507f328835989fa18"
+  'parent-type "f8748b813fab4220ba26e743aedf38da"
+  'options-generator options-gen
+  'menu-path (list gnc:menuname-custom)
+  'renderer (gnc:report-template-renderer/report-guid "f8748b813fab4220ba26e743aedf38da" "Cash Flow")))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Options for saved report "Monthly Expense Accounts - Oct", based on template "9bf1892805cb4336be6320fe48ce5446"
+(let ()
+ (define (options-gen)
+  (let ((options (gnc:report-template-new-options/report-guid "9bf1892805cb4336be6320fe48ce5446" "Expense Accounts")))
+
+; Section: General
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Report name")))
+  ((lambda (option) (if option ((gnc:option-setter option) "Monthly Expense Accounts"))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "End Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(absolute 1477882800 . 0)))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Start Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(absolute 1475290800 . 0)))) option))
+
+
+; Section: Accounts
+
+
+; Section: Display
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Plot Height")))
+  ((lambda (option) (if option ((gnc:option-setter option) 500.0))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Maximum Slices")))
+  ((lambda (option) (if option ((gnc:option-setter option) 10.0))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Plot Width")))
+  ((lambda (option) (if option ((gnc:option-setter option) 700.0))) option))
+
+
+; Section: __report
+
+  options))
+ (gnc:define-report 
+  'version 1
+  'name "Monthly Expense Accounts - Oct"
+  'report-guid "6272d73197c3566cca195c1e5084fba6"
+  'parent-type "9bf1892805cb4336be6320fe48ce5446"
+  'options-generator options-gen
+  'menu-path (list gnc:menuname-custom)
+  'renderer (gnc:report-template-renderer/report-guid "9bf1892805cb4336be6320fe48ce5446" "Expense Accounts")))
+
