@@ -11,6 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " plugin on GitHub repo
 Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'ervandew/supertab'
 " plugin from http://vim-scripts.org/vim/scripts.html
@@ -63,6 +64,9 @@ nmap <CR> o<Esc>
 "Remove all trailing whitespace by pressing F6
 nnoremap <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
+" Change the current window path to current file's path
+nnoremap <F3> :lcd %:p:h <CR>
+
 "highliht the characters after the 80
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 "match OverLength /\%81v.\+/
@@ -83,5 +87,8 @@ au BufNewFile,BufRead *.orogen set filetype=ruby
 " Implement automatic generator of for-loops
 inoremap FOR<CR> for(uint i = 0; XXX; i++)<CR>{<CR><CR>}<ESC>2<UP>4b
 
-" Automatically closes the brackets once they are open
-inoremap { {<CR>}<UP><CR>
+" Change the command line autocompletion when tab is pressed. This 
+" will complete as much as possible when tab is first hit instead of
+" automatically autocomplete even with multiple matches
+set wildmode=longest:full,full
+set wildmenu
