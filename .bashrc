@@ -148,3 +148,5 @@ function gh() {
   xdg-open $giturl
 }
 
+alias yadm-gitk='cd ~/.yadm/repo.git; gitk --all; cd $OLDPWD'
+alias rockenv='source $HOME/dev.bir/env.sh'
