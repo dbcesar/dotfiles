@@ -26,20 +26,20 @@ filetype plugin indent on    " required
 " YouCompleteMe configurations
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_autoclose_preview_window_after_completion = 0 
+let g:ycm_autoclose_preview_window_after_completion = 0
 " goto the reference file
-nnoremap <leader>jd :YcmCompleter GoTo<CR> 
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+nnoremap <leader>jf :YcmCompleter FixIt<CR>
 
 
 "Personal configurations
-
-imap jj <Esc> "maps jj to escape the insert mode  
-"nnoremap <F2> %s/\s\+$// "remove the extra tab/spaces in the end of a line
+"
+"maps jj to escape the insert mode
+imap jj <Esc>
 
 set tabstop=4
 set shiftwidth=4
 set expandtab
-
 
 set ai "auto indent
 set si "smart indent
@@ -76,7 +76,7 @@ LuciusDark
 set number
 " set cursorline
 " hi CursorLine ctermbg=grey
-" 
+"
 " autocmd InsertEnter * set nocursorline
 " autocmd InsertLeave * set cursorline
 
@@ -87,8 +87,11 @@ au BufNewFile,BufRead *.orogen set filetype=ruby
 " Implement automatic generator of for-loops
 inoremap FOR<CR> for(uint i = 0; XXX; i++)<CR>{<CR><CR>}<ESC>2<UP>4b
 
-" Change the command line autocompletion when tab is pressed. This 
+" Change the command line autocompletion when tab is pressed. This
 " will complete as much as possible when tab is first hit instead of
 " automatically autocomplete even with multiple matches
 set wildmode=longest:full,full
 set wildmenu
+
+" Automaticall set the spell check and the make program for .tex files
+autocmd Filetype tex set makeprg=pdflatex | set spell spelllang=en_us
