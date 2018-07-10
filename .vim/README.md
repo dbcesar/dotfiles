@@ -13,3 +13,14 @@ first:
     :PluginInstall
 
 The vimrc togehter wiht vundle will handle the plugins installation.
+
+First install YouCompleteMe dependencies:
+
+`sudo apt-get install -y python-dev python3-dev`
+
+Then install Clang completer
+
+```
+cd ~/.vim/bundle/YouCompleteMe
+./install.py --clang-completer
+```
