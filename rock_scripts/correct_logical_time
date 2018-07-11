@@ -1,0 +1,34 @@
+#! /usr/bin/env ruby
+
+require 'pocolog'
+
+in_file  = Pocolog::Logfiles.open(ARGV[0])
+out_file = Pocolog::Logfiles.create(ARGV[1])
+
+stream_mapping = Hash.new
+in_file.streams.each do |in_stream|
+    out_stream = out_file.create_stream(
+        in_stream.name, in_stream.type, in_stream.metadata)
+    if (in_stream.type < Typelib::CompoundType) && in_stream.type.has_field?('time')
+        field_offset  = in_stream.type.offset_of('time')
+        field_type    = in_stream.type['time']
+        field_size    = field_type.size
+    end
+    stream_mapping[in_stream.index] = [out_stream, field_offset, field_size, field_type]
+end
+
+in_file.each_data_block do |stream_index|
+    out_stream, field_offset, field_size, field_type =
+        stream_mapping[stream_index]
+    header     = in_file.data_header
+    marshalled = in_file.data
+
+    lg = header.lg
+
+    if field_offset
+        lg = field_type.wrap(marshalled[field_offset, field_size])
+        lg = Typelib.to_ruby(lg)
+    end
+
+    out_stream.write_raw(header.rt, lg, marshalled)
+end
