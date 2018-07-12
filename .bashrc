@@ -141,3 +141,8 @@ function gh() {
 }
 
 alias yadm-gitk='cd ~/.yadm/repo.git; gitk --all; cd $OLDPWD'
+
+# Unable Software Flow Control (XON/XOFF)
+# This allows to use CTRL-S on terminal whithout hang it.
+stty -ixon
+
