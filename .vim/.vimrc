@@ -1,3 +1,4 @@
+set encoding=utf-8
 " Requirements for use Vundle
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -17,6 +18,7 @@ Plugin 'ervandew/supertab'
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
 Plugin 'FuzzyFinder'
+Plugin 'flazz/vim-colorschemes'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
