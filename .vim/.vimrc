@@ -58,12 +58,7 @@ map <F10> :nohlsearch<CR>   " Temporarily disable highlighting, reenabled for th
 nnoremap <F5> :buffers<CR>:buffer<Space>
 " vim FuzzyFinder
 nnoremap <F4> :FufFile <CR>
-" create blanck line whithout entering in the insert mode
-" Enter to create a blank line after and Shift + Enter to
-" create one before
-nmap <S-Enter> O<Esc>
-nmap <CR> o<Esc>
-"Remove all trailing whitespace by pressing F6
+" Remove all trailing whitespace by pressing F6
 nnoremap <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 " Change the current window path to current file's path
