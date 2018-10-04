@@ -15,8 +15,7 @@ Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'ervandew/supertab'
-" plugin from http://vim-scripts.org/vim/scripts.html
-Plugin 'L9'
+Plugin 'L9'   " Required by FuzzyFinder 
 Plugin 'FuzzyFinder'
 Plugin 'flazz/vim-colorschemes'
 
@@ -57,7 +56,7 @@ map <F10> :nohlsearch<CR>   " Temporarily disable highlighting, reenabled for th
 " load buffers
 nnoremap <F5> :buffers<CR>:buffer<Space>
 " vim FuzzyFinder
-nnoremap <F4> :FufFile <CR>
+nnoremap <F4> :FufFile **/<CR>
 " Remove all trailing whitespace by pressing F6
 nnoremap <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
