@@ -1,25 +1,32 @@
-# vimconfig
-This uses vundle for bundle management. You need to install vundle manually
-first:
+For use this configuration you need to perform only four steps:
 
-  `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+In your home folder:
 
-  The main vimrc script is stored in ~/.vim/vimrc. $HOME/.vimrc should have a single line
+1. Download vundle, for plugins management:
+```
+$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
+2. Write a single line on your ~/.vimrc
+```
+echo "source ~/.vim/.vimrc" > ~/.vimrc
+```
+3. Inside `~/.vim`, download the .vimrc file
+```
+cd ~/.vim
+wget https://raw.githubusercontent.com/dbcesar/vimconfig/master/.vimrc
+```
+1. Open vim and install using plugins
+```
+vim
+:PluginInstall
+```
 
-    `source $HOME/.vim/vimrc`
-
-    Finally, install the bundles automagically with:
-
-    `:PluginInstall`
-
-The vimrc togehter wiht vundle will handle the plugins installation.
-
-First install YouCompleteMe dependencies:
-
-`sudo apt-get install -y python-dev python3-dev`
-
-Then install Clang completer
-
+## Install Youcompleteme
+After this, you just need to compile the youcompletme. First, make sure your python dependencies are installed:
+```
+sudo apt-get install python-dev python3-dev
+```
+Then:
 ```
 cd ~/.vim/bundle/YouCompleteMe
 ./install.py --clang-completer
