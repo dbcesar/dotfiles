@@ -13,7 +13,7 @@ echo "source ~/.vim/.vimrc" > ~/.vimrc
 3. Inside `~/.vim`, download the .vimrc file
 ```
 cd ~/.vim
-wget https://raw.githubusercontent.com/dbcesar/vimconfig/master/.vimrc
+wget https://raw.githubusercontent.com/dbcesar/dotfiles/master/.vim/.vimrc
 ```
 1. Open vim and install using plugins
 ```
