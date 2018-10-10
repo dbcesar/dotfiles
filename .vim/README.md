@@ -17,8 +17,7 @@ wget https://raw.githubusercontent.com/dbcesar/dotfiles/master/.vim/.vimrc
 ```
 1. Open vim and install using plugins
 ```
-vim
-:PluginInstall
+vim +PluginInstall
 ```
 
 ## Install Youcompleteme
