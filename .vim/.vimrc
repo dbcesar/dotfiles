@@ -29,8 +29,8 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 0
 " goto the reference file
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
-nnoremap <leader>jf :YcmCompleter FixIt<CR>
+nnoremap ff :YcmCompleter GoTo<CR>
+nnoremap fi :YcmCompleter FixIt<CR>
 
 
 "Personal configurations
@@ -58,7 +58,7 @@ nnoremap <F5> :buffers<CR>:buffer<Space>
 " vim FuzzyFinder
 nnoremap <F4> :FufFile **/<CR>
 " Remove all trailing whitespace by pressing F6
-nnoremap <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+nnoremap fs :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 " Change the current window path to current file's path
 nnoremap <F3> :lcd %:p:h <CR>
