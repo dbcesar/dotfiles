@@ -91,3 +91,5 @@ set wildmenu
 
 " Automaticall set the spell check and the make program for .tex files
 autocmd Filetype tex set makeprg=pdflatex | set spell spelllang=en_us
+" Makes vimgrep to ignore build folder
+set wildignore+=build/**
