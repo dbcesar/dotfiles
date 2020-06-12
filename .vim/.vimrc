@@ -51,13 +51,17 @@ let g:UltiSnipsEditSplit="vertical"
 
 "Personal configurations
 "
-"maps jj to escape the insert mode
-imap jj <Esc>
+imap jj <Esc> " maps jj to escape the insert mode
 nnoremap ff :YcmCompleter GoTo<CR>
 nnoremap fi :YcmCompleter FixIt<CR>
 nnoremap ft :YcmCompleter GetType<CR>
 nnoremap fs :FSHere<CR>
 nnoremap fb :b#<cr>
+
+"Vim Fugitive maps
+nnoremap gs :Gstatus<CR>
+nnoremap gb :Gblame<CR>
+
 " load buffers
 nnoremap fl :buffers<CR>:buffer<Space>
 " Remove all trailing whitespace by pressing fs
@@ -83,14 +87,16 @@ map <F10> :nohlsearch<CR>   " Temporarily disable highlighting, reenabled for th
 "highliht the characters after the 80
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 "match OverLength /\%81v.\+/
-"colorscheme lucius
-"LuciusDark
 augroup MyColors
     autocmd!
     autocmd ColorScheme * highlight Pmenu ctermfg=15 ctermbg=0 guifg=#ffffff guibg=#000000
 augroup END
-silent! colorscheme termschool
-"highlight Pmenu ctermfg=15 ctermbg=0 guifg=#ffffff guibg=#000000
+" need to aplly both color schems to achieve what I liked. They isolated are
+" not as good as combined :)
+silent! colorscheme minimalist
+silent! colorscheme afterglow
+" for working under sunlight
+" silent! colorscheme mayansmoke
 
 set number
 " set cursorline
