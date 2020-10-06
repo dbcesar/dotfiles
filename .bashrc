@@ -126,3 +126,5 @@ alias bb-restore="byobu-layout restore"
 # Unable Software Flow Control (XON/XOFF)
 # This allows to use CTRL-S on terminal whithout hang it.
 stty -ixon
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

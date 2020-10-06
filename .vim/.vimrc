@@ -8,6 +8,7 @@ set rtp^=~/.vim/plugin/amake.vim
 set rtp^=~/.vim/plugin/DoxygenToolkit.vim
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.fzf
 call vundle#begin()
 
 " let Vundle manage Vundle, required
@@ -19,8 +20,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rhubarb' "extension to fugitive to use Gbrowser on github
 Plugin 'shumphrey/fugitive-gitlab.vim' "extension to fugitive to use Gbrowser on gitlab
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'L9'   " Required by FuzzyFinder 
-Plugin 'FuzzyFinder'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'cespare/vim-toml' " enhance toml files
@@ -66,8 +65,25 @@ nnoremap gb :Gblame<CR>
 nnoremap fl :buffers<CR>:buffer<Space>
 " Remove all trailing whitespace by pressing fs
 nnoremap fr :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
-" vim FuzzyFinder
-nnoremap <F4> :FufFile **/<CR>
+" vim FuzzyFinder fzf
+nnoremap <F4> :FZF --reverse --info=inline <CR>
+let g:fzf_layout = { 'up': '20%' }
+" Customize fzf colors to match your color scheme
+" - fzf#wrap translates this to a set of `--color` options
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 
 set tabstop=4
 set shiftwidth=4

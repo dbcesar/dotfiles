@@ -1,5 +1,13 @@
 For use this configuration you need to perform only four steps:
 
+Now it requires fzf (fuzzyfinder)
+
+Installation: 
+```
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+```
+
 In your home folder:
 
 1. Download vundle, for plugins management:
